@@ -5,8 +5,9 @@ const whitePixel = "R0lGODlhAQABAIAAAP///wAAACwAAAAAAQABAAACAkQBADs=";
 
 const getPixelResponse = res => {
   res.header("Access-Control-Allow-Origin", "*");
-  res.header("Content-type", "image/gif");
-  res.end(Buffer.from(whitePixel, "base64"));
+  res.header("Content-type", "application/json");
+  // res.end(Buffer.from(whitePixel, "base64"));
+  res.end();
 };
 
 const getMaxAge = () => 60 * 60 * 24 * 1000 * 365;

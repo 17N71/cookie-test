@@ -19,7 +19,7 @@ router.post("/auth", function (req, res, next) {
     res.cookie(cookieName, "test", {
       maxAge: getMaxAge(),
       httpOnly: false,
-      domain: "216.24.57.252:443",
+      domain: ".cookie-front.vercel.app",
       secure: true,
       sameSite: "none",
     });
@@ -36,7 +36,7 @@ router.get("/test", function (req, res, next) {
   res.cookie("new-cookie", "value", {
     maxAge: getMaxAge(),
     httpOnly: false,
-    domain: "216.24.57.252:443",
+    domain: ".cookie-front.vercel.app",
     secure: false,
     sameSite: "none",
   });

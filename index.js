@@ -10,7 +10,7 @@ app.use(logger("dev"));
 app.use(express.json());
 app.use(
   cors({
-    origin: "https://cookie-front.vercel.app",
+    origin: "https://cookiefront.netlify.app",
     credentials: true,
     allowedHeaders: true,
   })

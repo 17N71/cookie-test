@@ -3,7 +3,8 @@ const cors = require("cors");
 const app = express();
 app.use(
   cors({
-    origin: "*",
+    origin: "https://cookiefront.netlify.app",
+    credentials: true,
   })
 );
 app.post("/auth", (req, res) => {
@@ -13,6 +14,7 @@ app.post("/auth", (req, res) => {
     secure: false,
     sameSite: "none",
   });
+
   res.send("ok");
 });
 

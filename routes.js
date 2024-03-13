@@ -16,11 +16,13 @@ const getMaxAge = () => 60 * 60 * 24 * 1000 * 365;
 const cookieName = "myCookie";
 
 router.post("/auth", function (req, res, next) {
-  console.log(req.originalUrl);
-  console.log(req.headers.host);
-  console.log(req.headers.origin);
-  console.log(req.headers["user-agent"]);
-  console.log(req.headers.referer);
+  const data = {
+    refer: req.headers.referer,
+    useragent: req.headers["user-agent"],
+    origin: req.headers.origin,
+    host: req.headers.host,
+    originalUrl: req.originalUrl,
+  };
   if (!req.cookies[cookieName]) {
     res.cookie(cookieName, "test", {
       maxAge: getMaxAge(),
@@ -32,6 +34,7 @@ router.post("/auth", function (req, res, next) {
   }
 
   getPixelResponse(res);
+  res.send(JSON.stringify(data));
 });
 
 router.get("/test", function (req, res, next) {

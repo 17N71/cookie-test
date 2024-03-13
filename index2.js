@@ -1,9 +1,7 @@
 const express = require("express");
-const cors = require("cors");
 const app = express();
-app.use(cors("*"));
 
-app.post("/auth", (req, res) => {
+app.post("/set-cookie", (req, res) => {
   res.cookie("myCookie", "cookie", {
     maxAge: 86400000,
     httpOnly: true,

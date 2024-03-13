@@ -1,23 +1,14 @@
 const express = require("express");
-const cookieParser = require("cookie-parser");
-const logger = require("morgan");
 const cors = require("cors");
-const indexRouter = require("./routes");
-
 const app = express();
+app.use(cors("*"));
 
-app.use(logger("dev"));
-app.use(express.json());
-app.use(cookieParser());
-app.use(
-  cors({
-    origin: "https://cookiefront.netlify.app",
-    credentials: true,
-    allowedHeaders: true,
-  })
-);
-app.use(express.urlencoded({ extended: false }));
-
-app.use("/", indexRouter);
-
-module.exports = app;
+app.post("/auth", (req, res) => {
+  res.cookie("myCookie", "cookie", {
+    maxAge: 86400000,
+    httpOnly: true,
+    secure: false,
+    sameSite: "none",
+  });
+  res.send("ok");
+});

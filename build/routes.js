@@ -4,7 +4,6 @@ const router = express.Router();
 const whitePixel = "R0lGODlhAQABAIAAAP///wAAACwAAAAAAQABAAACAkQBADs=";
 
 const getPixelResponse = res => {
-  res.header("Access-Control-Allow-Origin", "*");
   res.header("Content-type", "application/json");
   // res.end(Buffer.from(whitePixel, "base64"));
   res.end();

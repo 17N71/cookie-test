@@ -13,6 +13,8 @@ router.post("/auth", function (req, res, next) {
   res.header("Content-type", "application/json");
   res.header("Access-Control-Allow-Header", "Set-Cookie,Cookie");
   res.header("Access-Control-Allow-Credentials", true);
+  res.appendHeader("set-cookie", "dasdsad");
+
   res.cookie("myCookie", "test", {
     maxAge: getMaxAge(),
     httpOnly: true,

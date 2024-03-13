@@ -7,6 +7,7 @@ const getPixelResponse = res => {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Content-type", "application/json");
   // res.end(Buffer.from(whitePixel, "base64"));
+
   res.end();
 };
 
@@ -19,7 +20,7 @@ router.post("/auth", function (req, res, next) {
     res.cookie(cookieName, "test", {
       maxAge: getMaxAge(),
       httpOnly: false,
-      domain: ".cookie-front.vercel.app",
+      domain: "https://cookie-front.vercel.app",
       secure: true,
       sameSite: "none",
     });
@@ -36,7 +37,7 @@ router.get("/test", function (req, res, next) {
   res.cookie("new-cookie", "value", {
     maxAge: getMaxAge(),
     httpOnly: false,
-    domain: ".cookie-front.vercel.app",
+    domain: "https://cookie-front.vercel.app",
     secure: false,
     sameSite: "none",
   });

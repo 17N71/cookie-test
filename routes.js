@@ -16,6 +16,11 @@ const getMaxAge = () => 60 * 60 * 24 * 1000 * 365;
 const cookieName = "myCookie";
 
 router.post("/auth", function (req, res, next) {
+  console.log(req.originalUrl);
+  console.log(req.headers.host);
+  console.log(req.headers.origin);
+  console.log(req.headers["user-agent"]);
+  console.log(req.headers.referer);
   if (!req.cookies[cookieName]) {
     res.cookie(cookieName, "test", {
       maxAge: getMaxAge(),

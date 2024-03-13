@@ -3,7 +3,7 @@ const cors = require("cors");
 const app = express();
 app.use(
   cors({
-    origin: "https://cookiefront.netlify.app",
+    origin: "*",
     credentials: true,
   })
 );

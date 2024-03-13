@@ -5,6 +5,7 @@ const whitePixel = "R0lGODlhAQABAIAAAP///wAAACwAAAAAAQABAAACAkQBADs=";
 
 const getPixelResponse = res => {
   res.header("Content-type", "application/json");
+  res.header("Access-Control-Allow-Credentials", true);
   // res.end(Buffer.from(whitePixel, "base64"));
 
   res.end();

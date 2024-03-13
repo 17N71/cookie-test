@@ -12,3 +12,5 @@ app.post("/auth", (req, res) => {
   });
   res.send("ok");
 });
+
+module.exports = app;

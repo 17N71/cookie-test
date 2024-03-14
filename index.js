@@ -13,7 +13,7 @@ app.post("/auth", (req, res) => {
     secure: true,
     httpOnly: false,
     sameSite: "none",
-    domain: ".euw.devtunnels.ms",
+    domain: ".netlify.app",
   });
 
   res.send("ok");

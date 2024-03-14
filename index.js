@@ -11,8 +11,9 @@ app.use(
 app.post("/auth", (req, res) => {
   res.cookie("myCookie", "cookie", {
     secure: true,
-    httpOnly: false,
+    httpOnly: true,
     sameSite: "none",
+    maxAge: 86400000,
     domain: ".netlify.app",
   });
 

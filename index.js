@@ -14,7 +14,7 @@ app.post("/auth", (req, res) => {
     httpOnly: true,
     secure: true,
     sameSite: "none",
-    domain: " 10.220.15.20", // req.headers["x-forwarded-for"] || req.socket.remoteAddress,
+    domain: req.socket.remoteAddress,
   });
 
   res.send("ok");

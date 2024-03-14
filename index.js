@@ -14,7 +14,7 @@ app.post("/auth", (req, res) => {
     httpOnly: true,
     secure: true,
     sameSite: "none",
-    domain: "cookiefront.netlify.app",
+    priority: "low",
   });
 
   res.send("ok");

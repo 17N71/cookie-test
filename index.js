@@ -3,18 +3,17 @@ const cors = require("cors");
 const app = express();
 app.use(
   cors({
-    origin: "https://cookiefront.netlify.app",
+    origin: "https://pdbtjldv-5173.euw.devtunnels.ms",
     credentials: true,
   })
 );
 
 app.post("/auth", (req, res) => {
   res.cookie("myCookie", "cookie", {
-    maxAge: 86400000,
-    httpOnly: true,
     secure: true,
-    sameSite: "None",
-    domain: ".netlify.app",
+    httpOnly: false,
+    sameSite: "none",
+    domain: ".euw.devtunnels.ms",
   });
 
   res.send("ok");

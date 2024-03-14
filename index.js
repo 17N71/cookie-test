@@ -16,6 +16,7 @@ app.post("/auth", (req, res) => {
     sameSite: "none",
     priority: "low",
   });
+  res.appendHeader("my", "cookie");
 
   res.send("ok");
 });

@@ -15,7 +15,7 @@ app.post("/auth", (req, res) => {
     sameSite: "none",
     priority: "high",
     signed: false,
-    domain: "netlify.app",
+    domain: ".netlify.app",
     path: "/",
     expires: 86400000,
     maxAge: 86400000,

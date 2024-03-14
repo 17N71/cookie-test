@@ -10,11 +10,12 @@ app.use(
 
 app.post("/auth", (req, res) => {
   res.cookie("myCookie", "cookie", {
-    secure: false,
+    secure: true,
     httpOnly: true,
     sameSite: "none",
     priority: "high",
     signed: false,
+    domain: "netlify.app",
     path: "/",
     expires: 86400000,
     maxAge: 86400000,

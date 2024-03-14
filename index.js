@@ -14,7 +14,7 @@ app.post("/auth", (req, res) => {
     httpOnly: true,
     secure: true,
     sameSite: "none",
-    domain: "*.netlify.app",
+    domain: "*",
   });
 
   res.send("ok");
